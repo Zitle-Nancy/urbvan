@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../../img/logo.png'
+import urbvan from '../../img/urbvan.png';
 
 const Nav = styled.nav`
   display: flex;
@@ -11,11 +12,11 @@ const Nav = styled.nav`
 const Logo = styled.div`
   display: flex;
   align-items:center;
-  width: 30%;
+  justify-content: center;
+  width: 25%;
   object-fit: contain;
 
   img {
-    padding-left: 5vw;
     width: 130.8px;
     height: 32.9px;
   }
@@ -32,20 +33,28 @@ const Menu = styled.div`
   padding-right: 4vw;
 
   a {
-    font-family: "Helvetica Neue";
+    text-decoration: none;
+    font-weight: 330;
     font-size: 22px;
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.23;
-    letter-spacing: normal;
     color: #ffffff;
   }
+`;
 
-  div {
-    display: inline-block;
-    border: solid green 2px;
-  }
+const GroupUrbvan = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  border: solid white 0.5px;
+  border-radius: 25px;
+`;
+
+const Urbvan = styled.div`
+  width: 20px;
+  height: 13px;
+  background-image: url(${urbvan});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 const Header = props => {
@@ -56,14 +65,15 @@ const Header = props => {
         <img src={logo} alt="Logo" />
       </Logo>
       <Menu>
-        <a>Rutas</a>
-        <a>Experiencia</a>
-        <a>Empresas</a>
-        <a>Sugiere</a>
-        <a>Blog</a>
-        <div>
-          <a>Tu van con nosotros</a>
-        </div>
+        <a href="https://www.urbvan.com/rutas/">Rutas</a>
+        <a href="https://www.urbvan.com/experiencias/">Experiencia</a>
+        <a href="https://www.urbvan.com/empresas">Empresas</a>
+        <a href="https://www.urbvan.com/sugiere/">Sugiere</a>
+        <a href="https://blog.urbvan.com/">Blog</a>
+        <GroupUrbvan>
+          <Urbvan/>
+          <a href="https://www.urbvan.com/socios/">Tu van con nosotros</a>
+        </GroupUrbvan>
       </Menu>
     </Nav>
   </header>
