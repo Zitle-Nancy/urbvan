@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Header from './container/Header/Header';
+import Header from './component/Header/Header';
+import RouteList from './container/RouteList';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,6 +20,12 @@ const Title = styled.h1`
   margin-top: 4%;
 `;
 
+const Container = styled.div`
+  width: 75%;
+  border: solid red 1px;
+  margin: 0 auto;
+`;
+
 function App() {
   return (
     <Fragment>
@@ -29,9 +36,9 @@ function App() {
         Checa al es el que más te conviene para llegar a Santa Fe.
         Contamos con muchos horarios para llevarte a tiempo.
       </p>
-      <div className="App">
-        Hola
-      </div>
+      <Container>
+        <RouteList />
+      </Container>
     </Fragment>
   );
 }

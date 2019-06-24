@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import logo from '../../img/logo.png'
-import urbvan from '../../img/urbvan.png';
+import van from '../../img/van.png';
 
 const Nav = styled.nav`
   display: flex;
@@ -52,31 +52,32 @@ const GroupUrbvan = styled.div`
 const Urbvan = styled.div`
   width: 20px;
   height: 13px;
-  background-image: url(${urbvan});
+  background-image: url(${van});
   background-repeat: no-repeat;
   background-size: 100%;
 `;
 
+const Container = styled.div``;
 const Header = props => {
   return(
-  <header>
-    <Nav>
-      <Logo>
-        <img src={logo} alt="Logo" />
-      </Logo>
-      <Menu>
-        <a href="https://www.urbvan.com/rutas/">Rutas</a>
-        <a href="https://www.urbvan.com/experiencias/">Experiencia</a>
-        <a href="https://www.urbvan.com/empresas">Empresas</a>
-        <a href="https://www.urbvan.com/sugiere/">Sugiere</a>
-        <a href="https://blog.urbvan.com/">Blog</a>
-        <GroupUrbvan>
-          <Urbvan/>
-          <a href="https://www.urbvan.com/socios/">Tu van con nosotros</a>
-        </GroupUrbvan>
-      </Menu>
-    </Nav>
-  </header>
+    <header>
+      <Nav>
+        <Logo>
+          <img src={logo} alt="Logo" />
+        </Logo>
+        <Menu>
+          <a href="https://www.urbvan.com/rutas/">Rutas</a>
+          <a href="https://www.urbvan.com/experiencias/">Experiencia</a>
+          <a href="https://www.urbvan.com/empresas">Empresas</a>
+          <a href="https://www.urbvan.com/sugiere/">Sugiere</a>
+          <a href="https://blog.urbvan.com/">Blog</a>
+          <GroupUrbvan>
+            <Urbvan/>
+            <a href="https://www.urbvan.com/socios/">Tu van con nosotros</a>
+          </GroupUrbvan>
+        </Menu>
+      </Nav>
+    </header>
   )
 }
 
