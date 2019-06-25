@@ -5,7 +5,6 @@ import Schedule from './Schedule';
 import routesList from '../routes';
 
 const ContainerInfo = styled.div`
-  border: solid brown 2px;
   display: flex;
   align-items: center;
   width: 50%;
@@ -56,6 +55,7 @@ const Div = styled.div`
   ::-webkit-scrollbar {
     background-color: #e5e5e5;
     width: 6px;
+    height: 90%;
   }
 
   ::-webkit-scrollbar-thumb {

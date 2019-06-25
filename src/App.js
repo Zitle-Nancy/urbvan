@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './component/Header/Header';
+import Maps from './container/Maps';
 import RouteList from './container/RouteList';
 
 const GlobalStyle = createGlobalStyle`
@@ -21,6 +22,7 @@ const Title = styled.h1`
 `;
 
 const Container = styled.div`
+  position: relative;
   width: 85%;
   height: 85vh;
   border: solid red 2px;
@@ -39,6 +41,7 @@ function App() {
       </p>
       <Container>
         <RouteList />
+        <Maps />
       </Container>
     </Fragment>
   );
