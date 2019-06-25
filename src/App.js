@@ -21,8 +21,9 @@ const Title = styled.h1`
 `;
 
 const Container = styled.div`
-  width: 75%;
-  border: solid red 1px;
+  width: 85%;
+  height: 85vh;
+  border: solid red 2px;
   margin: 0 auto;
 `;
 
