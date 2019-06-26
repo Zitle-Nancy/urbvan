@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import Van from '../component/Svg/Van';
 import Schedule from './Schedule';
-import routesList from '../routes';
+
 
 const ContainerInfo = styled.div`
   display: flex;
@@ -119,8 +119,10 @@ class RouteList extends Component {
       }
     })
   }
+
   render(){
-    const { body:{ routes } } = routesList;
+    const { onSelectedRoute } = this.props;
+    const { body:{ routes } } = this.props.routesList;
     const { propertiesContainer } = this.state;
     return(
     <ContainerInfo>
@@ -135,6 +137,7 @@ class RouteList extends Component {
                   <Group 
                     onMouseEnter={this.hoverOn} 
                     onMouseLeave={this.hoverOff}
+                    onClick={() => onSelectedRoute(index)}
                   >
                     <Van 
                     color={colors[index]}

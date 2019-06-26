@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import routesList from '../routes';
+import moment from 'moment';
 
 const Container = styled.div`
   position: relative;
@@ -14,7 +14,7 @@ const Container = styled.div`
   box-sizing: border-box;
   opacity: ${props => props.opacity};
 `;
-// opacity: ${props => props.opacity};
+
 const Title = styled.p`
   font-size: 1.5rem;;
   font-width: 400;
@@ -43,10 +43,11 @@ const List = styled.div`
   }
 `;
 class Schedule extends Component{
+
   render(){
     const { schedule, properties } = this.props;
     const { am } = schedule;
-
+    // console.log(moment(`${item.departure_time}`, "LTS"))
     return(
       <Container
         width={properties.width}
@@ -68,10 +69,6 @@ class Schedule extends Component{
         <Turn>
           PM
         </Turn>
-          <List>
-            <p>Llegar a las am</p>
-            <p>Salir a las am</p>
-          </List>
       </Container>
     )
   }

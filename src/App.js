@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './component/Header/Header';
-import Maps from './container/Maps';
+import Map from './container/Map';
 import RouteList from './container/RouteList';
+import routesList from './routes';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -29,7 +30,29 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-function App() {
+const ContainerElement = styled.div`
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  width: 77%;
+  height: 100%;
+  border: solid green 3px;
+`;
+
+
+const MapElement = styled.div`
+  height: 100%;
+`;
+
+const LoadingElement = styled.div`
+  height: 100%;
+`;
+
+const App = () =>{
+  const [ selectedRoute, setSelectedRoute ] = useState(-1);
+  const { body:{ routes } } = routesList;
+  
   return (
     <Fragment>
       <GlobalStyle />
@@ -40,8 +63,19 @@ function App() {
         Contamos con muchos horarios para llevarte a tiempo.
       </p>
       <Container>
-        <RouteList />
-        <Maps />
+        <RouteList 
+          routesList={routesList}
+          onSelectedRoute={setSelectedRoute}
+        />
+        <Map 
+          isMarkerShown 
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZJ_uT_zxAgcPaKAH34xiZ5ba7o8ENm4"
+          loadingElement={<LoadingElement />}
+          containerElement={<ContainerElement/>}
+          mapElement={<MapElement/>}
+          routes={routes}
+          routeIndex={selectedRoute}
+        />
       </Container>
     </Fragment>
   );

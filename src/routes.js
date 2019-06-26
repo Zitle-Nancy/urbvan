@@ -20,7 +20,8 @@ const routesList = {
             "arrival_time": "15:30:00",
             "timezone": "America/Mexico_City",
             "availability": [1,2,3,4,5],
-            "stations":[{
+            "stations":[
+              {
               "name": "Juanacatlan",
               "departure_time": "14:30:00 - 05:00",
               "arrival_time": "15:30:00 - 05:00",
