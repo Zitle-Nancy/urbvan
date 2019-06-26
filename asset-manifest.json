@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/urbvan/static/css/main.34de6062.chunk.css",
+    "main.js": "/urbvan/static/js/main.2c5d3af8.chunk.js",
+    "main.js.map": "/urbvan/static/js/main.2c5d3af8.chunk.js.map",
+    "runtime~main.js": "/urbvan/static/js/runtime~main.4cf9dde7.js",
+    "runtime~main.js.map": "/urbvan/static/js/runtime~main.4cf9dde7.js.map",
+    "static/js/2.770ee15e.chunk.js": "/urbvan/static/js/2.770ee15e.chunk.js",
+    "static/js/2.770ee15e.chunk.js.map": "/urbvan/static/js/2.770ee15e.chunk.js.map",
+    "index.html": "/urbvan/index.html",
+    "precache-manifest.cedc7d12487d85db912aedeba60cbb08.js": "/urbvan/precache-manifest.cedc7d12487d85db912aedeba60cbb08.js",
+    "service-worker.js": "/urbvan/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/urbvan/static/css/main.34de6062.chunk.css.map"
+  }
+}
