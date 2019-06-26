@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './component/Header/Header';
+import Footer from './component/Footer/Footer';
 import Map from './container/Map';
 import RouteList from './container/RouteList';
 import routesList from './routes';
@@ -26,8 +27,8 @@ const Container = styled.div`
   position: relative;
   width: 85%;
   height: 85vh;
-  border: solid red 2px;
   margin: 0 auto;
+  margin-bottom: 5%;
 `;
 
 const ContainerElement = styled.div`
@@ -36,12 +37,12 @@ const ContainerElement = styled.div`
   top: 0;
   width: 77%;
   height: 100%;
-  border: solid green 3px;
 `;
 
 
 const MapElement = styled.div`
   height: 100%;
+  border-radius: 25px;
 `;
 
 const LoadingElement = styled.div`
@@ -76,6 +77,7 @@ const App = () =>{
           routeIndex={selectedRoute}
         />
       </Container>
+      <Footer />
     </Fragment>
   );
 }

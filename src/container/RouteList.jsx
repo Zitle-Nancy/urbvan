@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Van from '../component/Svg/Van';
 import Schedule from './Schedule';
 
-
 const ContainerInfo = styled.div`
   display: flex;
   align-items: center;
@@ -26,8 +25,7 @@ const Container = styled.div`
 const GroupRoutes = styled.div`
   display: flex;
   justify-content: center;
-  margin: 10% 0;
-
+  padding-top: 10px;
   :hover{
     background-color: #f8f8f8;
   }
@@ -83,8 +81,9 @@ class RouteList extends Component {
     propertiesContainer:{
       width:0,
       height: 0,
-      opacity:0
-    }
+      visibility:false,
+    },
+    indexSchedule: null,
   }
 
   componentDidMount(){
@@ -103,12 +102,13 @@ class RouteList extends Component {
     })
   }
 
-  hoverOn = () => {
+  hoverOn = (index) => {
     this.setState({
       propertiesContainer:{
         ...this.state.propertiesContainer,
-        opacity: 1
-      }
+        visibility: true
+      },
+      indexSchedule:index
     })
   }
 
@@ -116,15 +116,15 @@ class RouteList extends Component {
     this.setState({
       propertiesContainer:{
         ...this.state.propertiesContainer,
-        opacity: 0
+        visibility: false
       }
     })
   }
 
   render(){
-    const { onSelectedRoute } = this.props;
+    const { onSelectedRoute, routeIndex } = this.props;
     const { body:{ routes } } = this.props.routesList;
-    const { propertiesContainer } = this.state;
+    const { propertiesContainer, indexSchedule } = this.state;
     return(
     <ContainerInfo>
       <Container className='container-route-list'>
@@ -136,7 +136,7 @@ class RouteList extends Component {
                   key={index}
                 >
                   <Group 
-                    onMouseEnter={this.hoverOn} 
+                    onMouseEnter={() => this.hoverOn(index)} 
                     onMouseLeave={this.hoverOff}
                     onClick={() => onSelectedRoute(index)}
                   >
@@ -153,10 +153,10 @@ class RouteList extends Component {
             })}
           </Div>
           </Container>
-          <Schedule
-            schedule={routes[0].schedule}
+          {indexSchedule !== null && <Schedule
+            schedule={routes[indexSchedule].schedule}
             properties={propertiesContainer}
-          />
+          />}
     </ContainerInfo>
     )
   }

@@ -35,7 +35,7 @@ const Menu = styled.div`
   a {
     text-decoration: none;
     font-weight: 330;
-    font-size: 22px;
+    font-size: 1.2rem;
     color: #ffffff;
   }
 `;
@@ -44,7 +44,8 @@ const GroupUrbvan = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 300px;
+  width: 33%;
+  padding: 0.5%;
   border: solid white 0.5px;
   border-radius: 25px;
 `;

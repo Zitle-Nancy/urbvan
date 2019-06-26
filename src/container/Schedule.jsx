@@ -13,8 +13,7 @@ const Container = styled.div`
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   box-sizing: border-box;
-  opacity: ${props => props.opacity};
-  display : ${props => props.opacity ? 'block' : 'none'}
+  display : ${props => props.visibility ? 'block' : 'none'};
 `;
 
 const Title = styled.p`
@@ -53,7 +52,7 @@ class Schedule extends Component{
       <Container
         width={properties.width}
         height={properties.height}
-        opacity={properties.opacity}
+        visibility={properties.visibility}
       >
         <Title>HORARIOS</Title>
         <Turn>

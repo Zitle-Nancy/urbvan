@@ -16,7 +16,7 @@ const Div = styled.div`
   top: 0;
   width: 77%;
   height: 100%;
-  border: solid green 3px;
+  border-radius: 25px;
 `;
 
 class Map extends Component {
@@ -56,7 +56,6 @@ class Map extends Component {
 
   toggleInfoWindow = (index) => {
     this.setState(prevState => {
-      debugger;
       return {
         showInfoWindow: {
           ...prevState.showInfoWindow,
@@ -87,38 +86,34 @@ class Map extends Component {
           defaultCenter = {{ lat: 19.3990994, lng: -99.2138232 }}
           defaultZoom = { 13 }
         >
-          <React.Fragment>
-            {markers.map((marker, index) => (
-              <Marker
-                key={marker.name}
-                position={marker.position}
-                onMouseOver={() => this.toggleInfoWindow(index)}
-                onMouseOut={() => this.toggleInfoWindow(index)}
-              >
-                {this.state.showInfoWindow[index] && (
-                  <InfoWindow>
-                    <p>{marker.name}</p>
-                  </InfoWindow>
-                )}
-              </Marker>
-            ))}
-            {this.state.directions && (
-              <DirectionsRenderer
-                directions={this.state.directions}
-                options={{
-                  suppressInfoWindows: true,
-                  suppressMarkers: true,
-                  polylineOptions: {
-                    strokeColor:'#4c59a4',
-                    strokeWeight: 5,
-                    strokeOpacity: 0.7,
-                  },
-                }}
-                
-              />
-            )}
-            
-          </React.Fragment>
+          {markers.map((marker, index) => (
+            <Marker
+              key={marker.name}
+              position={marker.position}
+              onMouseOver={() => this.toggleInfoWindow(index)}
+              onMouseOut={() => this.toggleInfoWindow(index)}
+            >
+              {this.state.showInfoWindow[index] && (
+                <InfoWindow>
+                  <p>{marker.name}</p>
+                </InfoWindow>
+              )}
+            </Marker>
+          ))}
+          {this.state.directions && (
+            <DirectionsRenderer
+              directions={this.state.directions}
+              options={{
+                suppressInfoWindows: true,
+                suppressMarkers: true,
+                polylineOptions: {
+                  strokeColor:'#4c59a4',
+                  strokeWeight: 5,
+                  strokeOpacity: 0.7,
+                },
+              }}
+            />
+          )}
         </GoogleMap>
       </Div>
     )
