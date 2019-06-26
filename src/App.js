@@ -52,7 +52,7 @@ const LoadingElement = styled.div`
 const App = () =>{
   const [ selectedRoute, setSelectedRoute ] = useState(-1);
   const { body:{ routes } } = routesList;
-  
+
   return (
     <Fragment>
       <GlobalStyle />
@@ -69,7 +69,7 @@ const App = () =>{
         />
         <Map 
           isMarkerShown 
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZJ_uT_zxAgcPaKAH34xiZ5ba7o8ENm4"
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_KEY}`}
           loadingElement={<LoadingElement />}
           containerElement={<ContainerElement/>}
           mapElement={<MapElement/>}
