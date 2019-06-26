@@ -32,7 +32,6 @@ const Container = styled.div`
 
 const ContainerElement = styled.div`
   position: absolute;
-  z-index: -1;
   right: 0;
   top: 0;
   width: 77%;

@@ -3,16 +3,18 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 const Container = styled.div`
+  z-index: 1;
   position: relative;
   padding: 0 4%;
   left: -18px;
   height: ${props => props.height}px;
-  width: ${props => props.width / 1.4}px;
+  width: ${props => props.width / 1.2}px;
   background-color: #f8f8f8;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   box-sizing: border-box;
   opacity: ${props => props.opacity};
+  display : ${props => props.opacity ? 'block' : 'none'}
 `;
 
 const Title = styled.p`
@@ -47,7 +49,6 @@ class Schedule extends Component{
   render(){
     const { schedule, properties } = this.props;
     const { am } = schedule;
-    // console.log(moment(`${item.departure_time}`, "LTS"))
     return(
       <Container
         width={properties.width}

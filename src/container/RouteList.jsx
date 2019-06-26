@@ -12,6 +12,7 @@ const ContainerInfo = styled.div`
 `;
 
 const Container = styled.div`
+  z-index: 1;
   height: 80%;
   width: 50%;
   padding-right: 5%;
